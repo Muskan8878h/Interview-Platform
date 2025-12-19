@@ -14,3 +14,13 @@ inside backend folder run:
         //server file is inside the src folder so also change the script to "dev": "nodemon src/index.js"
         //also change the main to "main": "src/index.js"
     npm run dev
+
+
+
+#To build the project run the following command from the root folder:
+    npm run build
+This will install all dependencies and create a production build of the frontend inside the backend folder.
+
+#To start the server run the following command from the root folder:
+    npm run start
+This will start the backend server which will serve the production build of the frontend.
