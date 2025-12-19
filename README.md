@@ -24,3 +24,6 @@ This will install all dependencies and create a production build of the frontend
 #To start the server run the following command from the root folder:
     npm run start
 This will start the backend server which will serve the production build of the frontend.
+
+
+also install npm install @clerk/clerk-react
