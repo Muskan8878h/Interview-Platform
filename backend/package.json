@@ -12,10 +12,15 @@
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@clerk/express": "^1.7.60",
+    "@stream-io/node-sdk": "^0.7.28",
+    "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
+    "inngest": "^3.48.1",
     "interview-platform": "file:..",
-    "mongoose": "^9.0.2"
+    "mongoose": "^9.0.2",
+    "stream-chat": "^9.27.2"
   },
   "devDependencies": {
     "nodemon": "^3.1.11"
