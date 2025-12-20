@@ -183,13 +183,13 @@ function SessionPage() {
                               </div>
                               <div className="bg-base-200 rounded-lg p-4 font-mono text-sm space-y-1.5">
                                 <div className="flex gap-2">
-                                  <span className="text-primary font-bold min-w-[70px]">
+                                  <span className="text-primary font-bold min-w-70">
                                     Input:
                                   </span>
                                   <span>{example.input}</span>
                                 </div>
                                 <div className="flex gap-2">
-                                  <span className="text-secondary font-bold min-w-[70px]">
+                                  <span className="text-secondary font-bold min-w-70">
                                     Output:
                                   </span>
                                   <span>{example.output}</span>
