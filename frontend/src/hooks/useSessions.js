@@ -3,63 +3,42 @@ import toast from "react-hot-toast";
 import { sessionApi } from "../api/sessions";
 
 export const useCreateSession = () => {
-  const result = useMutation({
-    mutationKey: ["createSession"],
+  return useMutation({
     mutationFn: sessionApi.createSession,
     onSuccess: () => toast.success("Session created successfully!"),
-    onError: (error) => toast.error(error.response?.data?.message || "Failed to create room"),
+    onError: (error) =>
+      toast.error(error.response?.data?.message || "Failed to create room"),
   });
-
-  return result;
 };
 
-export const useActiveSessions = () => {
-  const result = useQuery({
+export const useActiveSessions = () =>
+  useQuery({
     queryKey: ["activeSessions"],
     queryFn: sessionApi.getActiveSessions,
   });
 
-  return result;
-};
-
-export const useMyRecentSessions = () => {
-  const result = useQuery({
+export const useMyRecentSessions = () =>
+  useQuery({
     queryKey: ["myRecentSessions"],
     queryFn: sessionApi.getMyRecentSessions,
   });
 
-  return result;
-};
-
-export const useSessionById = (id) => {
-  const result = useQuery({
+export const useSessionById = (id) =>
+  useQuery({
     queryKey: ["session", id],
     queryFn: () => sessionApi.getSessionById(id),
     enabled: !!id,
-    refetchInterval: 5000, // refetch every 5 seconds to detect session status changes
+    refetchInterval: 5000,
   });
 
-  return result;
-};
-
-export const useJoinSession = () => {
-  const result = useMutation({
-    mutationKey: ["joinSession"],
+export const useJoinSession = () =>
+  useMutation({
     mutationFn: sessionApi.joinSession,
     onSuccess: () => toast.success("Joined session successfully!"),
-    onError: (error) => toast.error(error.response?.data?.message || "Failed to join session"),
   });
 
-  return result;
-};
-
-export const useEndSession = () => {
-  const result = useMutation({
-    mutationKey: ["endSession"],
+export const useEndSession = () =>
+  useMutation({
     mutationFn: sessionApi.endSession,
     onSuccess: () => toast.success("Session ended successfully!"),
-    onError: (error) => toast.error(error.response?.data?.message || "Failed to end session"),
   });
-
-  return result;
-};

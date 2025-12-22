@@ -23,7 +23,7 @@ function Navbar() {
 
           <div className="flex flex-col">
             <span className="font-black text-xl bg-linear-to-r from-primary via-secondary to-accent bg-clip-text text-transparent font-mono tracking-wider">
-              Talent IQ
+              Interview-Platform
             </span>
             <span className="text-xs text-base-content/60 font-medium -mt-1">Code Together</span>
           </div>
@@ -49,7 +49,7 @@ function Navbar() {
           </Link>
 
           {/* DASHBORD PAGE LINK */}
-          <Link
+          {/* <Link
             to={"/dashboard"}
             className={`px-4 py-2.5 rounded-lg transition-all duration-200 
               ${
@@ -64,7 +64,7 @@ function Navbar() {
               <LayoutDashboardIcon className="size-4" />
               <span className="font-medium hidden sm:inline">Dashbord</span>
             </div>
-          </Link>
+          </Link> */}
 
           <div className="ml-4 mt-2">
             <UserButton />

@@ -1,3 +1,45 @@
+// import mongoose from "mongoose";
+
+// const sessionSchema = new mongoose.Schema(
+//   {
+//     problem: {
+//       type: String,
+//       required: true,
+//     },
+//     difficulty: {
+//       type: String,
+//       enum: ["easy", "medium", "hard"],
+//       required: true,
+//     },
+//     host: {
+//       type: mongoose.Schema.Types.ObjectId,
+//       ref: "User",
+//       required: true,
+//     },
+//     participant: {
+//       type: mongoose.Schema.Types.ObjectId,
+//       ref: "User",
+//       default: null,
+//     },
+//     status: {
+//       type: String,
+//       enum: ["active", "completed"],
+//       default: "active",
+//     },
+//     // stream video call ID
+//     callId: {
+//       type: String,
+//       default: "",
+//     },
+//   },
+//   { timestamps: true }
+// );
+
+// const Session = mongoose.model("Session", sessionSchema);
+
+// export default Session;
+
+
 import mongoose from "mongoose";
 
 const sessionSchema = new mongoose.Schema(
@@ -6,30 +48,31 @@ const sessionSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+
     difficulty: {
       type: String,
       enum: ["easy", "medium", "hard"],
       required: true,
     },
-    host: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
+
+    hostClerkId: {
+      type: String,
       required: true,
     },
-    participant: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
+
+    participantClerkId: {
+      type: String,
       default: null,
     },
+
     status: {
       type: String,
       enum: ["active", "completed"],
       default: "active",
     },
-    // stream video call ID
+
     callId: {
       type: String,
-      default: "",
     },
   },
   { timestamps: true }
@@ -37,4 +80,4 @@ const sessionSchema = new mongoose.Schema(
 
 const Session = mongoose.model("Session", sessionSchema);
 
-export default Session;
+export default Session; // 🔥 THIS LINE FIXES YOUR ERROR

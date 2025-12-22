@@ -2,7 +2,7 @@ import { Code2, Clock, Users, Trophy, Loader } from "lucide-react";
 import { getDifficultyBadgeClass } from "../lib/utils";
 import { formatDistanceToNow } from "date-fns";
 
-function RecentSessions({ sessions, isLoading }) {
+function RecentSessions({ sessions = [], isLoading }) {
   return (
     <div className="card bg-base-100 border-2 border-accent/20 hover:border-accent/30 mt-8">
       <div className="card-body">
@@ -48,10 +48,15 @@ function RecentSessions({ sessions, isLoading }) {
                     >
                       <Code2 className="w-6 h-6 text-white" />
                     </div>
+
                     <div className="flex-1 min-w-0">
-                      <h3 className="font-bold text-base mb-1 truncate">{session.problem}</h3>
+                      <h3 className="font-bold text-base mb-1 truncate">
+                        {session.problem}
+                      </h3>
                       <span
-                        className={`badge badge-sm ${getDifficultyBadgeClass(session.difficulty)}`}
+                        className={`badge badge-sm ${getDifficultyBadgeClass(
+                          session.difficulty
+                        )}`}
                       >
                         {session.difficulty}
                       </span>
@@ -67,6 +72,7 @@ function RecentSessions({ sessions, isLoading }) {
                         })}
                       </span>
                     </div>
+
                     <div className="flex items-center gap-2">
                       <Users className="w-4 h-4" />
                       <span>
@@ -77,7 +83,9 @@ function RecentSessions({ sessions, isLoading }) {
                   </div>
 
                   <div className="flex items-center justify-between pt-3 border-t border-base-300">
-                    <span className="text-xs font-semibold opacity-80 uppercase">Completed</span>
+                    <span className="text-xs font-semibold opacity-80 uppercase">
+                      {session.status}
+                    </span>
                     <span className="text-xs opacity-40">
                       {new Date(session.updatedAt).toLocaleDateString()}
                     </span>
@@ -90,8 +98,12 @@ function RecentSessions({ sessions, isLoading }) {
               <div className="w-20 h-20 mx-auto mb-4 bg-linear-to-br from-accent/20 to-secondary/20 rounded-3xl flex items-center justify-center">
                 <Trophy className="w-10 h-10 text-accent/50" />
               </div>
-              <p className="text-lg font-semibold opacity-70 mb-1">No sessions yet</p>
-              <p className="text-sm opacity-50">Start your coding journey today!</p>
+              <p className="text-lg font-semibold opacity-70 mb-1">
+                No sessions yet
+              </p>
+              <p className="text-sm opacity-50">
+                Start your coding journey today!
+              </p>
             </div>
           )}
         </div>
